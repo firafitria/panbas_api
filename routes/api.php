@@ -16,6 +16,7 @@ use App\Http\Controllers\API\AuthController;
 */
 
 Route::group(['middleware => auth:sanctum'], function(){
+    # code ......
 });
 
 Route::post('/login', [AuthController::class, 'login']);
