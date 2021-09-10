@@ -21,4 +21,6 @@ Route::group(['middleware => auth:sanctum'], function(){
 });
 
 Route::post('/login', [AuthController::class, 'login']);
+
 Route::get('/laporan/index', [LaporanController::class, 'index']);
+Route::post('/laporan/store', [LaporanController::class, 'store']);

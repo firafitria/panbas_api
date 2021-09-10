@@ -15,7 +15,7 @@ class CreateLaporanTable extends Migration
     {
         Schema::create('laporan', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->index(); // harus ada
+            $table->integer('user_id')->index()->nullable(); // harus ada
             $table->text('lokasi');
             $table->text('keterangan');
             $table->timestamps();

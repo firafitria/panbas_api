@@ -26,7 +26,17 @@ class LaporanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'lokasi' => ['required'],
+            'keterangan' => ['required'],
+        ]);
+
+        Laporan::create([
+            'lokasi' => $request->lokasi,
+            'keterangan' => $request->keterangan,
+        ]);
+
+        return 'Laporan berhasil dibuat';
     }
 
     /**
