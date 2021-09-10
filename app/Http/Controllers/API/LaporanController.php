@@ -47,7 +47,7 @@ class LaporanController extends Controller
      */
     public function show(Laporan $laporan)
     {
-        //
+        return response()->json($laporan);
     }
 
     /**
@@ -59,7 +59,15 @@ class LaporanController extends Controller
      */
     public function update(Request $request, Laporan $laporan)
     {
-        //
+        $request->validate([
+            'lokasi' => ['required'],
+            'keterangan' => ['required'],
+        ]);
+
+        $laporan->update([
+            'lokasi' => $request->lokasi,
+            'keterangan' => $request->keterangan,
+        ]);
     }
 
     /**
