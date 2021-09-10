@@ -70,6 +70,7 @@ class LaporanController extends Controller
      */
     public function destroy(Laporan $laporan)
     {
-        //
+        $laporan->delete();
+        return "Laporan sudah terhapus";
     }
 }
