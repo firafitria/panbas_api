@@ -68,6 +68,8 @@ class LaporanController extends Controller
             'lokasi' => $request->lokasi,
             'keterangan' => $request->keterangan,
         ]);
+
+        return "Laporan berhasil di update";
     }
 
     /**

@@ -24,3 +24,6 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/laporan/index', [LaporanController::class, 'index']);
 Route::post('/laporan/store', [LaporanController::class, 'store']);
+Route::get('/laporan/show/{laporan}', [LaporanController::class, 'show']);
+Route::put('/laporan/update/{laporan}', [LaporanController::class, 'update']);
+Route::delete('/laporan/destroy/{laporan}', [LaporanController::class, 'destroy']);
