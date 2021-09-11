@@ -18,6 +18,7 @@ class CreateLaporanTable extends Migration
             $table->integer('user_id')->index()->nullable(); // harus ada
             $table->text('lokasi');
             $table->text('keterangan');
+            $table->text('image')->nullable(); // kalau required, nullablenya hapus aja.
             $table->timestamps();
         });
     }
