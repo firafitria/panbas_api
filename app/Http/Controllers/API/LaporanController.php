@@ -36,13 +36,14 @@ class LaporanController extends Controller
         if($request->image != NULL){ // kalau udah required gak usah pakai ini
             $image = $request->file('image');
             $nama_image = rand().'.'.$image->getClientOriginalExtension();
-            $image->move(public_path('lokasi_gambar'), $nama_image);
+            $image->move(public_path('lokasi_gambar/'), $nama_image);
+            $image_location = public_path('lokasi_gambar/') . $nama_image;
         }
 
         Laporan::create([
             'lokasi' => $request->lokasi,
             'keterangan' => $request->keterangan,
-            'image' => $nama_image,
+            'image' => $image_location,
         ]);
 
         return 'Laporan berhasil dibuat';
