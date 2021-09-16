@@ -37,7 +37,7 @@ class LaporanController extends Controller
             $image = $request->file('image');
             $nama_image = rand().'.'.$image->getClientOriginalExtension();
             $image->move(public_path('lokasi_gambar/'), $nama_image);
-            $image_location = public_path('lokasi_gambar/') . $nama_image;
+            $image_location = 'lokasi_gambar/' . $nama_image;
         }
 
         Laporan::create([
