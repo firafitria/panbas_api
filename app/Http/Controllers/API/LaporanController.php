@@ -15,7 +15,11 @@ class LaporanController extends Controller
      */
     public function index()
     {
-        return response()->json(Laporan::orderBy("id","desc")->get());
+        //buat array dulu dengan key laporan, isinya baru laporannya
+        //return response()->json(Laporan::orderBy("id","desc")->get());
+        return response()->json([
+            'laporan' => Laporan::orderBy("id","desc")->get(),
+        ]);
     }
 
     /**
