@@ -33,7 +33,7 @@ class LaporanController extends Controller
         $request->validate([
             'lokasi' => ['required'],
             'keterangan' => ['required'],
-            // 'image' => ['required'],
+            'image' => ['required', 'file'],
         ]);
 
         $nama_image = NULL; // kalau udah required gak usah pakai ini
