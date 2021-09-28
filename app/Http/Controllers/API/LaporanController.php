@@ -19,7 +19,7 @@ class LaporanController extends Controller
         //return response()->json(Laporan::orderBy("id","desc")->get());
         return response()->json([
             'laporan' => Laporan::orderBy("id","desc")->get(),
-        ]);
+        ], 200);
     }
 
     /**
@@ -52,7 +52,9 @@ class LaporanController extends Controller
             'image' => $image_location,
         ]);
 
-        return 'Laporan berhasil dibuat';
+        return response()->json([
+            'message' => 'Laporan berhasil dibuat'
+        ], 201);
     }
 
     /**
@@ -63,7 +65,7 @@ class LaporanController extends Controller
      */
     public function show(Laporan $laporan)
     {
-        return response()->json($laporan);
+        return response()->json($laporan, 200);
     }
 
     /**
@@ -85,7 +87,9 @@ class LaporanController extends Controller
             'keterangan' => $request->keterangan,
         ]);
 
-        return "Laporan berhasil di update";
+        return response()->json([
+            'message' => 'Laporan berhasil di update'
+        ], 201);
     }
 
     /**
